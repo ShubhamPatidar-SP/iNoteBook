@@ -1,0 +1,189 @@
+/* Set a dark background color for the entire app */
+body {
+  background-color: #222;
+  font-family: 'Roboto', sans-serif;
+  /* You can replace 'Roboto' with your desired font */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the content */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Make the logo larger and add a subtle animation */
+.App-logo {
+  height: 80vmin;
+  /* Increase the size of the logo */
+  pointer-events: none;
+  animation: App-logo-spin 10s linear infinite;
+  /* Shorten the animation duration */
+}
+
+/* Apply some styling to the header */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(12px + 2vmin);
+  /* Increase the font size */
+}
+
+/* Style links with an eye-catching color */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  /* Remove underlines from links */
+}
+
+/* Add a keyframe animation for the logo spin */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add custom styles for the alert */
+.custom-alert {
+  background-color: #343a40;
+  /* Dark background color */
+  color: #fff;
+  /* Text color */
+  border-color: #343a40;
+  /* Border color */
+  border-radius: 0;
+  /* Remove border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Add a subtle box shadow */
+  padding: 10px 15px;
+  /* Adjust padding */
+  margin-bottom: 10px;
+  /* Add margin to separate alerts */
+}
+
+/* Style the close button */
+.btn-close {
+  color: #fff;
+  /* Close button color */
+  opacity: 0.7;
+  /* Reduce opacity for a subtle appearance */
+}
+
+/* Style the close button on hover */
+.btn-close:hover {
+  opacity: 1;
+  /* Full opacity on hover */
+}
+
+/* Add custom styles for the AddNote component */
+
+/* Style the form elements */
+.form-label,
+.form-control {
+  color: white;
+}
+
+.form-control {
+  background-color: #343a40;
+  /* Dark background color */
+  border-color: #343a40;
+  /* Border color */
+}
+
+/* Style the "Add Note" button */
+.custom-button {
+  background-color: #007bff;
+  /* Blue button background color */
+  border-color: #007bff;
+  /* Button border color */
+  color: white;
+  /* Button text color */
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+  /* Button background color on hover */
+  border-color: #0056b3;
+  /* Button border color on hover */
+}
+
+/* Noteitem.css */
+
+.card {
+  background-color: #343a40;
+  /* Dark background color */
+  border-color: #343a40;
+  /* Border color */
+  color: white;
+  /* Text color */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  /* Adjust title font size */
+}
+
+.card-text {
+  font-size: 1rem;
+  /* Adjust text font size */
+}
+
+.note-icons {
+  text-align: right;
+  /* Align icons to the right */
+  margin-top: 10px;
+  /* Add margin to separate icons from text */
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  /* Adjust button font size */
+}
+
+/* Style the "Delete" button */
+.btn-danger {
+  background-color: #dc3545;
+  /* Red button background color */
+  border-color: #dc3545;
+  /* Button border color */
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  /* Button background color on hover */
+  border-color: #bd2130;
+  /* Button border color on hover */
+}
+
+/* Style the "Edit" button */
+.btn-primary {
+  background-color: #007bff;
+  /* Blue button background color */
+  border-color: #007bff;
+  /* Button border color */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  /* Button background color on hover */
+  border-color: #0056b3;
+  /* Button border color on hover */
+}
+
+/* Add this CSS rule to your global CSS file or component-specific CSS */
+.profile-img {
+  border: 3px solid white;
+  /* Add a 3px white border */
+  border-radius: 50%;
+  /* Make the image circular */
+}
