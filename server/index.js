@@ -10,11 +10,15 @@ const app = express()
 const port = 5000
 
 app.use(cors())
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
 // Available routes
-app.use('/api/auth', auth)
-app.use('/api/notes', notes)
+/* ROUTES WITH FILES */
+// app.post("/auth/register", upload.single("picture"), register);
+app.use('/api/auth', auth);
+app.use('/api/notes', notes);
 
 app.listen(port, () => {
     console.log(`iNoteBook server listening at http://127.0.0.1:5000 port ${port}`)

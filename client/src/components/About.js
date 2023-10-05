@@ -1,41 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import noteContext from '../context/notes/noteContext';
+import './About.css'; // Import the CSS file
+
 
 const About = () => {
-    const navigate = useNavigate(); // Call useNavigate as a function
+    const context = useContext(noteContext);
+    const navigate = useNavigate();
+    const { about, getuser } = context;
+
     useEffect(() => {
         if (!localStorage.getItem('token')) {
             navigate('/Login');
         }
+        getuser(); // Access getuser from the context
         // eslint-disable-next-line
     }, []);
+
+    // Check if 'about' exists and 'about.image' is defined
+    if (about && about.image && about.image.startsWith("C:\\fakepath\\")) {
+        // Remove "C:\fakepath\" and add "../../public/assets/"
+        about.image = `${about.image.substring(12)}`;
+        console.log(about.image);
+    }
+
+
     return (
-        <div className="container mt-5">
-            <div className="row">
-                <div className="col-lg-4">
-                    <div className="profile-picture">
-                        <img
-                            src={""} // Add your profile picture source here
-                            alt="Profile"
-                            className="img-fluid rounded-circle profile-img"
-                        />
-                    </div>
-                </div>
-                <div className="col-lg-8">
-                    <div className="user-info">
-                        <h2>About Me</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nisl vel turpis hendrerit,
-                            eu sodales ex scelerisque. Nullam ut elit in metus feugiat ultrices. Sed lacinia libero in metus
-                            scelerisque, et bibendum justo venenatis.
-                        </p>
-                        <p>
-                            Name: John Doe <br />
-                            Age: 30 <br />
-                            Location: New York, USA
-                        </p>
-                    </div>
-                </div>
+        <div className="about-container">
+            <div className="left-container">
+                <img src={`http://localhost:5000/assets/${about.image}`} alt="User Profile" className="profile-image" />
+                <div className="profile-name">{about && about.name ? about.name : ''}</div>
+                <div className="profile-email">{about && about.email ? about.email : ''}</div>
+                <div className="profile-email">Age : {about && about.email ? about.age : ''}</div>
+                <div className="profile-email">Location : {about && about.email ? about.location : ''}</div>
+            </div>
+            <div className="right-container">
+                <h1>About Me</h1>
+                <p>{about.bio}</p>
             </div>
         </div>
     );

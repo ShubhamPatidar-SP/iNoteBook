@@ -6,6 +6,30 @@ const NoteState = (props) => {
     const host = 'http://127.0.0.1:5000';
     const notesInitial = []
     const [notes, setNotes] = useState(notesInitial)
+    const [about, setAbout] = useState("");
+
+    // get user details
+    const getuser = async () => {
+        try {
+            // API CALL
+            const response = await fetch(`${host}/api/auth/getuser`, {
+                method: 'POST',
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error(`Error fetching user data: ${response.statusText}`);
+            }
+
+            const json = await response.json();
+            setAbout(json);
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+    };
+
 
     // get all notes
     const getNotes = async () => {
@@ -82,7 +106,7 @@ const NoteState = (props) => {
     }
 
     return (
-        <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
+        <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes, about, getuser }}>
             {props.children}
         </NoteContext.Provider >
     )

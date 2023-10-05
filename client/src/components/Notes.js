@@ -26,7 +26,7 @@ const Notes = (props) => {
         setNote({ id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag });
     }
 
-    const handleClidk = (e) => {
+    const handleClick = (e) => {
         editNote(note.id, note.etitle, note.edescription, note.etag)
         refClose.current.click()
         props.showAlert("Your note UPDATED cussessfuly...", "success")
@@ -68,7 +68,7 @@ const Notes = (props) => {
                             </div>
                             <div className="modal-footer">
                                 <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button onClick={handleClidk} type="button" className="btn btn-primary">Update Note</button>
+                                <button onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
                             </div>
                         </div>
                     </div>

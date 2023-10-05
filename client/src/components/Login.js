@@ -35,37 +35,48 @@ const Login = (props) => {
     };
 
     return (
-        <div className='login-container'>
-            <h3 className='login-title my-3'>Login to continue iNoteBook</h3>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="email" className="login-label my-1">Email address</label>
-                    <input
-                        type="email"
-                        className="form-control login-input"
-                        id="email"
-                        name="email"
-                        value={credentials.email}
-                        onChange={onChange}
-                        placeholder="Enter your email"
-                    />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div className="container">
+            <div className="row justify-content-center mt-5">
+                <div className="col-md-6">
+                    <div className="card login-container">
+                        <div className="card-body">
+                            <h3 className="card-title text-center">Login to continue iNoteBook</h3>
+                            <form onSubmit={handleSubmit}>
+                                <div className="mb-3">
+                                    <label htmlFor="email" className="form-label">Email address</label>
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        id="email"
+                                        name="email"
+                                        value={credentials.email}
+                                        onChange={onChange}
+                                        placeholder="Enter your email"
+                                    />
+                                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="password" className="form-label">Password</label>
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        id="password1"
+                                        value={credentials.password}
+                                        name="password"
+                                        onChange={onChange}
+                                        placeholder="Enter your password"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password" className="login-label my-1">Password</label>
-                    <input
-                        type="password"
-                        className="form-control login-input"
-                        id="password1"
-                        value={credentials.password}
-                        name="password"
-                        onChange={onChange}
-                        placeholder="Enter your password"
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary login-button my-4">Submit</button>
-            </form>
+            </div>
         </div>
+
     );
 };
 

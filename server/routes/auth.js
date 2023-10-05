@@ -5,9 +5,21 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const fetchuser = require('../middleware/fetchuser.js');
+const multer = require('multer');
 
 // jwt web token for signature the tokan 
 const JWT_SECRETE = "this is the very secrete string";
+
+// upload middleware is created 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "../public/assets");
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    },
+});
+const upload = multer({ storage });
 
 // ROUTER  1 =====================================================================================
 // create a user using POST "api/auth" dosent require path NO login require
@@ -16,7 +28,7 @@ router.post('/createuser', [
     body('name', 'Enter a valid name ').isLength({ min: 3 }),
     body('email', 'Enter a valid email type ').isEmail(),
     body('password', 'Enter a valid password type ').isLength({ min: 6 })
-], async (req, res) => {
+], upload.single("image"), async (req, res) => {
     let success = false;
     const errors = validationResult(req);                                   //storing validation result in the errors
     if (!errors.isEmpty()) {                                                // if error is not empty means there is some error in it
@@ -38,7 +50,11 @@ router.post('/createuser', [
         user = await User.create({
             name: req.body.name,
             email: req.body.email,
-            password: secPass
+            password: secPass,
+            image: req.body.image,
+            age: req.body.age,
+            location: req.body.location,
+            bio: req.body.bio
         });
 
         const data = {

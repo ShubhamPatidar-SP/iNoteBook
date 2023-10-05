@@ -15,6 +15,24 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    image: {
+        type: String,
+        // required: true
+        default: ""
+
+    },
+    age: {
+        type: String,
+        default: "20"
+    },
+    location: {
+        type: String,
+        default: "Bhopal"
+    },
+    bio: {
+        type: String,
+        default: "this is about me"
+    },
     date: {
         type: Date,
         default: Date.now
