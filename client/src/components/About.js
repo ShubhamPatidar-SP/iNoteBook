@@ -21,9 +21,7 @@ const About = () => {
     if (about && about.image && about.image.startsWith("C:\\fakepath\\")) {
         // Remove "C:\fakepath\" and add "../../public/assets/"
         about.image = `${about.image.substring(12)}`;
-        console.log(about.image);
     }
-
 
     return (
         <div className="about-container">
