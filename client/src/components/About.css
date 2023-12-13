@@ -1,20 +1,13 @@
-/* About.css */
-
-/* Main container for the About page */
 .about-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #ffffff;
-    /* Background color for the entire container */
+    background-color: #080808;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Add a subtle box shadow */
     border-radius: 10px;
-    /* Rounded corners */
 }
 
-/* Left container for user profile information */
 .left-container {
     text-align: center;
     max-width: 300px;
@@ -22,61 +15,52 @@
 
 .profile-image {
     border: 3px solid white;
-    /* border-radius: 50%; */
     max-width: 80%;
     transition: transform 0.3s ease;
-    /* Add a smooth scale animation on hover */
 }
 
 .profile-image:hover {
     transform: scale(1.1);
-    /* Scale up the image on hover */
 }
 
 .profile-name {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 30px;
+    font-weight: 900;
     margin-top: 10px;
-    color: #333;
-    /* Text color */
+    color: white;
 }
 
 .profile-email {
     font-size: 18px;
     margin-top: 5px;
-    color: #555;
-    /* Text color */
+    color: rgba(214, 203, 203, 0.667);
 }
 
 .profile-date {
     font-size: 16px;
     margin-top: 5px;
-    color: #777;
+    color: white;
     /* Text color */
 }
 
-/* Right container for "About Me" section */
 .right-container {
     flex: 1;
     padding-left: 20px;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 50px;
+    font-weight: 900;
     margin-bottom: 10px;
-    color: #333;
-    /* Text color */
+    color: rgba(206, 91, 91, 0.76);
 }
 
 p {
-    font-size: 18px;
+    font-size: 25px;
     line-height: 1.4;
-    /* Improve readability with a slightly increased line height */
-    color: #444;
-    /* Text color */
+    color: rgba(211, 189, 189, 0.913);
 }
 
-/* Add a fade-in animation for the "About Me" section */
 .right-container h1,
 .right-container p {
     opacity: 0;

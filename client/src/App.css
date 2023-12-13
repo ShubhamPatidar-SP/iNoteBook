@@ -1,4 +1,4 @@
-/* Set a dark background color for the entire app */
+/* Set a dark background color for the entire app  */
 body {
   background-color: #222;
   font-family: 'Roboto', sans-serif;
@@ -59,7 +59,7 @@ body {
   /* Dark background color */
   color: #fff;
   /* Text color */
-  border-color: #343a40;
+  border-color: #b8bec5;
   /* Border color */
   border-radius: 0;
   /* Remove border radius */
@@ -94,11 +94,16 @@ body {
 }
 
 .form-control {
-  background-color: #343a40;
-  /* Dark background color */
-  border-color: #343a40;
-  /* Border color */
+  background-color: #7c848c68;
+  border-color: #080808;
+  color: #392020;
 }
+
+/* .form-control {
+  background-color: #4d6882;
+  border-color: #080808;
+  color: #392020;
+} */
 
 /* Style the "Add Note" button */
 .custom-button {
