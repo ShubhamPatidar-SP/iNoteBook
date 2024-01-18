@@ -8,9 +8,13 @@ const AddNote = (props) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        addNote(note.title, note.description, note.tag);
+        if (note.title !== '' && note.description !== '') {
+            addNote(note.title, note.description, note.tag);
+            props.showAlert('Your note ADDED successfully', 'success');
+        } else {
+            props.showAlert('Note title and description must have value', 'Danger');
+        }
         setNote({ title: '', description: '', tag: '' });
-        props.showAlert('Your note ADDED successfully', 'success');
     };
 
     const onChange = (e) => {
