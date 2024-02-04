@@ -16,7 +16,6 @@ app.use(express.json())
 
 // Available routes
 /* ROUTES WITH FILES */
-// app.post("/auth/register", upload.single("picture"), register);
 app.use('/api/auth', auth);
 app.use('/api/notes', notes);
 
