@@ -9,7 +9,7 @@ const { body, validationResult } = require('express-validator');
 // Fetching the data of user's notes using GET "/fetchallnotes" (login required)
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
     try {
-        const notes = await Note.find({ user: req.user.id });
+        const notes = await Note.find();
         res.json(notes);
     } catch (error) {
         console.error(error.message);
